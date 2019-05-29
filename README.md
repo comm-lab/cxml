@@ -12,6 +12,10 @@ To use the library, just add the files _cxml.c_ and _cxml.h_ to your project.
 If you need some type conversion functions (these rely on libc), include  also _cxml\_types.c_
 and _cxml\_types.h_.
 
+### Note
+Warning! this library has been written to be used in embedded environment so while it is very simple and lightweight,
+it may contain bugs.
+
 ### Usage example
 
 ```c
