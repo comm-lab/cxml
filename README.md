@@ -29,7 +29,7 @@ struct XmlDocument doc;
 xml_document_create(&doc, XML, strlen(XML));
 
 int event;
-while ((event = xml_read(&doc))) {
+while ((event = xml_read(&doc) != XML_EOF)) {
     switch (event)
     {
     case XML_TAG_BEGIN: {
