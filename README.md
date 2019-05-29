@@ -3,11 +3,14 @@
 ### Introduction
 This is a simple XML pull parser written in C. Its features:
 
-    * Two file (*.h *.c) implementation
-    * No dynamic allocation
-    * No external dependency (even libc)
-    * C99 standard
+* Two file (*.h *.c) implementation
+* No dynamic allocation
+* No external dependency (even libc)
+* C99 standard
 
+To use the library, just add the files _cxml.c_ and _cxml.h_ to your project.
+If you need some type conversion functions (these rely on libc), include  also _cxml\_types.c_
+and _cxml\_types.h_.
 
 ### Usage example
 
