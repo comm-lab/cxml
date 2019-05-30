@@ -14,6 +14,7 @@ conditions:
 
 The above copyright notice and this permission notice shall be
 included in all copies or substantial portions of the Software.
+int xml_string_cmp(struct XmlString* a, struct XmlString* b);
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
@@ -163,4 +164,21 @@ struct XmlString xml_attr_value(struct XmlDocument* doc) {
     return str;
 }
 
+int xml_string_eq(struct XmlString* a, struct XmlString* b) {
+    if(b->length != a->length) {
+        return 0;
+    }
 
+    if(a->str == b->str) {
+        // Both string refer to the same slice
+        return 1;
+    }
+
+    for (long i=0; i < a->length; i++) {
+        if(a->str[i] != b->str[i]) {
+            return 0;
+        }
+    }
+
+    return 1;
+}

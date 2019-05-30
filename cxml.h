@@ -70,3 +70,5 @@ struct XmlString xml_attr_name(struct XmlDocument* doc);
 struct XmlString xml_attr_value(struct XmlDocument* doc);
 // Removes whitespace from beginning and end of a string
 void xml_string_trim(struct XmlString* str);
+// Returns 1 when the strings are equal, 0 otherwise
+int xml_string_eq(struct XmlString* a, struct XmlString* b);
