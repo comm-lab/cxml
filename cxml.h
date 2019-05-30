@@ -57,9 +57,11 @@ enum XmlEvent {
 void xml_document_create (struct XmlDocument* doc, 
                         const char* source, 
                         unsigned long length);
+
 // Each call to xml_read() advances the parser and returns an
 // XmlEvent whenever it encounters a tag/attribute/text/eof 
 int xml_read (struct XmlDocument* doc);
+
 // Returns current tag name
 struct XmlString xml_name(struct XmlDocument* doc);
 // Returns current text content
@@ -68,8 +70,12 @@ struct XmlString xml_text(struct XmlDocument* doc);
 struct XmlString xml_attr_name(struct XmlDocument* doc);
 // Returns current attribute value
 struct XmlString xml_attr_value(struct XmlDocument* doc);
+
 // Removes whitespace from beginning and end of a string
 void xml_string_trim(struct XmlString* str);
 // Returns 1 when the strings are equal, 0 otherwise
 int xml_string_eq(struct XmlString* a, struct XmlString* b);
 int xml_string_match(struct XmlString* a, const char* b);
+// Copy an XmlString into a c-string 
+// Note: dest should have at least src.len+1 bytes capacity
+void xml_string_cpy(struct XmlString* src, char* dest);

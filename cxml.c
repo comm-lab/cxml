@@ -26,7 +26,7 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 */
 
-#include "cxml.h"
+#include <cxml.h>
 
 
 static int is_whitespace(char c) {
@@ -191,4 +191,11 @@ int xml_string_match(struct XmlString* a, const char* b) {
     }
 
     return 1;
+}
+
+void xml_string_cpy(struct XmlString* src, char* dest) {
+    for(long i=0; i<src->length; i++) {
+        dest[i] = src->str[i];
+    }
+    dest[src->length] = 0;
 }
