@@ -5,7 +5,7 @@ This is a simple XML pull parser written in C. Its features:
 
 * Two file (*.h *.c) implementation
 * No dynamic allocation
-* No external dependency (even libc)
+* No external dependency (not even libc)
 * C99 standard
 
 To use the library, just add the files _cxml.c_ and _cxml.h_ to your project.
