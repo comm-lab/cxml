@@ -182,3 +182,13 @@ int xml_string_eq(struct XmlString* a, struct XmlString* b) {
 
     return 1;
 }
+
+int xml_string_match(struct XmlString* a, const char* b) {
+    for(long i=0; i<a->length; i++) {
+        if(a->str[i] != b[i] || b[i] == 0) {
+            return 0;
+        }
+    }
+
+    return 1;
+}

@@ -72,3 +72,4 @@ struct XmlString xml_attr_value(struct XmlDocument* doc);
 void xml_string_trim(struct XmlString* str);
 // Returns 1 when the strings are equal, 0 otherwise
 int xml_string_eq(struct XmlString* a, struct XmlString* b);
+int xml_string_match(struct XmlString* a, const char* b);
