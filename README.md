@@ -23,6 +23,7 @@ const char* XML =
     "<Root>"
     "   <Item num='1'/>"
     "   <Item num='2'/>"
+    "   <Child>Lorem ipsum</Child>"
     "</Root>";
 
 struct XmlDocument doc;
@@ -41,6 +42,12 @@ while ((event = xml_read(&doc)) != XML_EOF) {
     case XML_ATTRIBUTE: {
         struct XmlString name = xml_attr_name(&doc);
         struct XmlString value = xml_attr_value(&doc);
+        ...
+        break;
+    }
+    
+    case XML_TEXT: {
+        struct XmlString text = xml_text(&doc);
         ...
         break;
     }
