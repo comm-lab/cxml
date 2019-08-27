@@ -1,0 +1,10 @@
+<root>
+    <element1>Content 1</element1>
+    <element2>Content 2</element2>
+    <element3 attr1="ATTR1">Content 3</element3>
+    <element4>
+        <nested1></nested1>
+        <nested2 attr2="ATTR2"/>
+        Content 4
+    </element4>
+</root>

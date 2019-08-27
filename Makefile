@@ -10,5 +10,8 @@ cxml.o: cxml.c cxml.h
 cxml_types.o: cxml_types.c cxml_types.h
 	gcc -O -c cxml_types.c -I.
 
+test: libcxml.a test.c
+	gcc test.c -I. -L. -l:libcxml.a
+
 clean:
 	rm -f *.o *.a *.gch
